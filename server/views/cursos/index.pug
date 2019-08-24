@@ -1,0 +1,11 @@
+extends ../layout/index
+block contenido
+    section#one.wrapper
+        .inner
+            input#buscador(type='text', placeholder='Digite el curso a buscar')
+
+    main.container.mt-4  
+        h1.text-center.mb-5 #{pagina}
+        include ../layout/partials/cursos
+        h1.text-center.mb-5 #{paginaProx}
+        include ../layout/partials/cursosProx

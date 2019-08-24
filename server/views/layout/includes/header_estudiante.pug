@@ -1,0 +1,21 @@
+header#header
+  nav.left
+    a(href='#menu')
+      span Menu
+  a.logo(href='/') Sistema de Matrícula
+  nav.right
+    button.m-r-10(href='/admin') #{usuarioActual}
+    a.button.alt(href='/login') Cerrar Sesión
+    h2
+
+nav#menu
+  ul.links
+    li
+      a(href='/home_estudiante') Inicio
+    li
+      a(href='/cursosMatriculados') Ver Cursos Matriculados
+    li
+      a(href='/cursos') Matrícular Cursos
+  ul.actions.vertical
+    li
+      a#inicioUser.button.fit(href='/login') Iniciar Sesión

@@ -1,0 +1,26 @@
+.row.wrapper
+    .col-sm-12
+        table.infoBusqueda.table.table-bordered.table-responsive-sm
+            thead
+                tr
+                th(scope='col') Número estudiante
+                th(scope='col') Nombre
+                th(scope='col') Cédula
+                th(scope='col') Teléfono
+                th(scope='col') Email
+                th(scope='col') Escolaridad
+                th(scope='col') Fecha nacimiento
+            tbody
+                each estudiante in estudiantes
+                    tr
+                        th(scope='row') #{estudiante.num_estudiante}
+                        td #{estudiante.nombre_estudiante}
+                        td #{estudiante.ced_estudiante}
+                        td #{estudiante.tel_estudiante}
+                        td #{estudiante.email_estudiante}
+                        td #{estudiante.escolaridad_estudiante}
+                        td #{estudiante.nacimiento_estudiante}
+                        td 
+                            button#btnModestudiante.btn-sm.btn-block(type='button', onClick=`popUp('modificarEstudiante/${estudiante.email_estudiante}','Modificar estudiante')`) Modificar 
+                        td
+                            button.btn-secondary.btn-sm.btn-block.delete-estudiante(type='button', href="/", data-id=`${estudiante.email_estudiante}`) Desactivar

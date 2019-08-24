@@ -1,0 +1,11 @@
+extends ../layout/index
+block contenido
+    section#one.wrapper
+        .inner
+            input#buscadorCurso(type='text', placeholder='Digite el curso a buscar')
+
+    main.container.mt-4  
+        h1.text-center.mb-5 #{pagina}
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo magni culpa accusamus mollitia porro, magnam consectetur inventore autem? Recusandae reiciendis velit possimus, culpa delectus ipsa tempora exercitationem deleniti aspernatur distinctio!
+        
+        include ../layout/partials/tablaCursos

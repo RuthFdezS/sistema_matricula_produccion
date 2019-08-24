@@ -1,0 +1,37 @@
+extends ../layout/popup
+block contenido
+    main.container.mt-5 
+        .row
+            .col-md-12
+                if(errores)
+                    each  error in errores  
+                        div.alert.alert-danger.text-center(role="alert") #{error.mensaje}
+                h1.text-center Modificar el Matricula: #{matricula.num_matricula}
+                .row.justify-content-center
+                    .col-md-8
+                        form(action="/modificarMatricula/"+matricula.num_matricula, method="POST")
+                            //- .form-group
+                            //-     label(for="nombre_tutor") Nombre tutor
+                            //-     input(id="nombre_tutor", class="form-control", type="text", placeholder="Nombre tutor", name="nombre_tutor", value=tutor.nombre_tutor required)
+                            //- .form-group
+                            //-     label(for="ced_tutor") Cédula tutor
+                            //-     input(id="ced_tutor", class="form-control", type="text", placeholder="Cédula tutor", name="ced_tutor", value=tutor.ced_tutor required)
+                            //- .form-group
+                            //-     label(for="email_tutor") Email tutor
+                            //-     input(id="email_tutor", class="form-control", type="email", placeholder="Email tutor", name="email_tutor", value=tutor.email_tutor required)
+                            //- .form-group
+                            //-     label(for="tel_tutor") Teléfono
+                            //-     input(id="tel_tutor", class="tel_tutor", type="tel", placeholder= "Teléfono tutor", name="tel_tutor", value=tutor.tel_tutor required)
+                            //- .form-group
+                            //-     label(for="especialidad_tutor") Especialidad del tutor
+                            //-     input(id="especialidad_tutor", class="especialidad_tutor", type="text", placeholder="Especialidad", name="especialidad_tutor", value=tutor.especialidad_tutor required)
+                            //- .form-group
+                            //-     label(for="pass_tutor") Contraseña
+                            //-     input(id="pass_tutor", class="pass_tutor", type="password", placeholder="Especialidad", name="pass_tutor", value=tutor.pass_tutor required)
+
+                            input.btn.btn-success.btn-block(type="submit", value="Guardar")
+
+            
+
+                
+                    

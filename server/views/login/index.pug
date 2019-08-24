@@ -1,0 +1,44 @@
+extends ../layout/index_login
+block contenido
+    section#banner
+        .content
+            .container
+                header.major
+                h2 #{pagina}
+            .container(class='50%')
+                if(errores)
+                     each  error in errores  
+                        div.alert.alert-danger.text-center(role="alert") #{error.mensaje}
+                form(action="/", method="POST")
+                    .form-group
+                        label(for="correo_electronico") Correo Electronico
+                        input(id="correo_electronico", class="form-control", placeholder="Correo electronico", type='email', required='', name="correo_electronico", value=correo_electronico)
+                    .form-group
+                        label(for="especialidad_curso") Contraseña
+                        input(id="password", class="form-control", placeholder="Contraseña", type='password', required='', name="password", value=password)
+                    input.btn.btn-success.btn-block(type="submit", value="ingresar")
+
+
+                //- form#formLogin(method='post', action='enviarForm', onsubmit='return loginUser(this);')
+                //-     .row.uniform
+                //-         div.12u(class='12u$(small)')
+                //-             input#name(name='correo_electronico', value='', placeholder='Correo Electrónico', type='email', required='')
+                //-         div(class='12u$ 12u$(small)')
+                //-             input#email(name='password', value='', placeholder='Contraseña', type='password', required='')
+                //-         div(class='12u$')
+                //-             ul.actions
+                //-                 li
+                //-                     input(type='submit', name='btnEnviar', value='Iniciar Sesión', onclick='clic(this);')
+                //-                 li
+                //-                     input.alt(type='reset', name='btnReset', value='Limpiar', onclick='clic(this);')
+
+           
+
+            .container(class='50%')
+                div.6u(class='6u$(small)')
+                    input#copy(type='checkbox', name='copy')
+                    label(for='copy')
+                        h4 Recuerdame
+                div(class='6u$ 12u$(small)')
+                    a(href='/olvidoContrasena')
+                        h4 ¿Olvido su contraseña?

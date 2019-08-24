@@ -1,0 +1,28 @@
+extends ../layout/popup
+block contenido
+    main.container.mt-4  
+        h1.text-center.mb-5 #{pagina}        
+        .row.wrapper
+            .col-sm-12
+                table#tableEstudiantes.infoBusqueda.table.table-bordered.table-responsive-sm
+                    thead
+                        tr
+                        th(scope='col') Número estudiante
+                        th(scope='col') Nombre
+                        th(scope='col') Cédula
+                        th(scope='col') Teléfono
+                        th(scope='col') Email
+                        th(scope='col') Escolaridad
+                        th(scope='col') Fecha nacimiento
+                    tbody
+                        each estudiante in estudiantes
+                            tr
+                                th(scope='row') #{estudiante.num_estudiante}
+                                td #{estudiante.email_estudiante}
+                                td #{estudiante.nombre_estudiante}
+                                td #{estudiante.ced_estudiante}
+                                td #{estudiante.tel_estudiante}
+                                td #{estudiante.escolaridad_estudiante}
+                                td #{estudiante.nacimiento_estudiante}
+            .col-sm-12
+                button.btnImprimir.btn-sm.btn-block(type='button' onClick="imprimirLista('#tableEstudiantes','Lista de estudiantes')") Imprimir

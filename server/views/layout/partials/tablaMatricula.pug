@@ -1,0 +1,19 @@
+.row.wrapper
+    .col-sm-12
+        table#matriculaDisponible.table.table-bordered.table-responsive-sm
+            thead
+                tr
+                th(scope='col') Numero de matricula
+                th(scope='col') ID Curso
+                th(scope='col') Email estudiante
+            tbody
+                each matricula in matriculas
+                    tr
+                        th(scope='row') #{matricula.num_matricula}
+                        td #{matricula.id_curso}
+                        td #{matricula.email_estudiante}
+                        //- td 
+                        //-     button#btnMatriculaMod.btn-sm.btn-block(type='button', onClick=`popUp('modificarMatricula/${matricula.num_matricula}','Modificar Matricula')`) Modificar 
+                        td
+                            button.btn-secondary.btn-sm.btn-block.delete-matricula(type='button', href="/", data-id=`${matricula.num_matricula}`) Desactivar
+                            

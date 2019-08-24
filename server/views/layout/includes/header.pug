@@ -1,0 +1,41 @@
+header#header
+  nav.left
+    a(href='#menu')
+      span Menu
+  a.logo(href='/home') Sistema de Matrícula
+  nav.right
+    //-a.button.alt(href='/login') Iniciar Sesión
+    button.m-r-10(href='/admin') #{usuarioActual} 
+    a.button.alt(href='/login') Cerrar Sesión
+    h2
+
+nav#menu
+  
+  ul.links
+    li
+      a(href='/home') Inicio
+    if(tipoUsuarioActual===0)
+      li
+        a(href='/cursosMatriculados') Ver Cursos Matriculados
+    li
+      a(href='/cursos') Matrícular Cursos
+    if(tipoUsuarioActual===0)
+      li
+        a(href='/cursoRegistro') Registrar Curso
+      li
+        a(href='/cursosVista') Lista de Cursos
+      li
+        a(href='/estudianteRegistro') Registrar Estudiante
+      li
+        a(href='/estudiantesVista') Lista de Estudiante
+      li
+        a(href='/tutorRegistro') Registrar Tutor
+      li
+        a(href='/tutoresVista') Lista de Tutores
+      li
+        a(href='/admin') Admin
+      li
+        a(href='/reportes') Reportes
+  ul.actions.vertical
+    li
+      a#inicioUser.button.fit(href='/login') Iniciar Sesión

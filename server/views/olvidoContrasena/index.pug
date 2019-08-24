@@ -1,0 +1,15 @@
+extends ../layout/index_login
+block contenido
+    section#banner
+        .content
+            .container
+                header.major
+                h2 #{pagina}
+                    form#formForgotPass(method='post', action='enviarForm', onsubmit='return submitForgot(this);')
+                        .row.uniform
+                            div(class='12u$ 12u$(small)')
+                            input#email(name='email', value='', placeholder='Correo electrónico', type='email', required='')
+                            div(class='12u$')
+                            ul.actions
+                                li
+                                input(type='submit', name='btnEnviar', value='Recuperar contraseña', onclick='clic(this);')

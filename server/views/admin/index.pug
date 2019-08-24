@@ -1,0 +1,29 @@
+extends ../layout/index
+block contenido
+    .main.container.mt-5
+        .row 
+            .col-md-12.text-center
+                h1 #{pagina}
+            each admin in admins
+                .col-md-12.justify-content-center
+                    h1 Administrador: #{admin.nombre_admin}
+                    p    
+                        span
+                            i.fas.fa-ghost
+                            |  #{admin.nombre_admin}
+                    p
+                        span 
+                            i.fas.fa-id-card
+                            |  #{admin.ced_admin} 
+                    p 
+                        span
+                            i.icon.fas.fa-at 
+                            |  #{admin.email_admin}
+                    p 
+                        span
+                            i.fas.fa-mobile
+                            |  Teléfono: #{tel_admin}
+
+
+
+    

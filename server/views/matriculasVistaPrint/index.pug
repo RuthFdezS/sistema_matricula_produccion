@@ -1,0 +1,20 @@
+extends ../layout/popup
+block contenido
+    main.container.mt-4  
+        h1.text-center.mb-5 #{pagina}        
+        .row.wrapper
+            .col-sm-12
+                table#tableMatricula.infoBusqueda.table.table-bordered.table-responsive-sm
+                    thead
+                        tr
+                        th(scope='col') Número matricula
+                        th(scope='col') Código curso
+                        th(scope='col') Email estudiante
+                    tbody
+                        each matricula in matriculas
+                            tr
+                                th(scope='row') #{matricula.num_matricula}
+                                td #{matricula.id_curso}
+                                td #{matricula.email_estudiante}
+            .col-sm-12
+                button.btnImprimir.btn-sm.btn-block(type='button' onClick="imprimirLista('#tableMatricula','Lista de matriculas')") Imprimir

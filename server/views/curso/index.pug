@@ -1,0 +1,40 @@
+extends ../layout/index
+block contenido
+    main.container.mt-5
+        .row
+            .col-md-5
+                img(src=`/img/curso${curso.imagen_curso}.jpg`, class="img-fluid")
+            .col-md-7
+                h1 #{curso.nombre_curso}
+                p    
+                    span
+                        i.fas.fa-file-alt
+                        |  Especialidad: #{curso.especialidad_curso}
+                p
+                    span 
+                        i.fas.fa-chalkboard-teacher
+                        |  #{curso.nombre_tutor} 
+                p 
+                    span
+                        i.icon.fa-calendar-alt 
+                        |  #{curso.horario_curso}
+                p 
+                    span
+                        i.fas.fa-user-graduate
+                        |  Capacidad: #{curso.cant_estudiantes}
+                p 
+                    span
+                        i.fas.fa-school
+                        |  Aula/Laboratorio: #{curso.aula_curso}
+                p 
+                    span
+                        i.fas.fa-info-circle
+                        |  #{curso.descripcion_curso}
+
+                if(curso.estado_curso=="Proximo")
+                    h3 Pronto más información
+                else if (curso.estado_curso=="Activo")
+                    button.button.fit.small.btn-block(type='button', data-toggle='modal', data-target='#exampleModalCenter') Matrícular
+                include ../layout/partials/modalMatricula
+
+    

@@ -1,0 +1,12 @@
+.row.proximos-viajes
+    each cursoProx in cursosProx
+        .col-md-6.col-lg-4.mb-4
+            .card
+                img(src=`img/curso${cursoProx.imagen_curso}.jpg`, class="img-fluid")
+                .card-body
+                    h2= cursoProx.nombre_curso
+                    p= cursoProx.descripcion_curso.substr(0,100)
+                    p
+                        i.icon.blue.fa-calendar-alt
+                        |  #{cursoProx.horario_curso}
+                    a(href=`cursos/${cursoProx.id}`, class="button fit small btn-block") Más información 

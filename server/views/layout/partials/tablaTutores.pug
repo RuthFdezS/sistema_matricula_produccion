@@ -1,0 +1,25 @@
+.row.wrapper
+    .col-sm-12
+        table.infoBusqueda.table.table-bordered.table-responsive-sm
+            thead
+                tr
+                th(scope='col') ID
+                th(scope='col') Nombre
+                th(scope='col') Cédula
+                th(scope='col') Email
+                th(scope='col') Teléfono
+                th(scope='col') Especialidad
+            tbody
+                each tutor in tutores
+                    tr
+                        th(scope='row') #{tutor.id}
+                        td #{tutor.nombre_tutor}
+                        td #{tutor.ced_tutor}
+                        td #{tutor.email_tutor}
+                        td #{tutor.tel_tutor}
+                        td #{tutor.especialidad_tutor}
+                        td 
+                            button#btnModtutor.btn-sm.btn-block(type='button', onClick=`popUp('modificarTutor/${tutor.id}','Modificar Tutor')`) Modificar 
+                        td
+                            button.btn-secondary.btn-sm.btn-block.delete-tutor(type='button', href="/", data-id=`${tutor.id}`) Desactivar
+                            

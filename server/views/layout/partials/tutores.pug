@@ -1,0 +1,17 @@
+.row.wrapper
+    each curso in cursos
+        .col-md-6.col-lg-4.mb-4
+            .card
+                img(src=`img/curso${curso.imagen_curso}.jpg`, class="img-fluid")
+                .card-body
+                    h2= curso.nombre_curso
+                    p= curso.descripcion_curso.substr(0,100)
+                    p 
+                        i.icon.blue.fa-calendar-alt
+                        |  #{curso.horario_curso}
+                    if(curso.estado_curso=="Proximo")
+                        a(href=`cursos/${curso.id}`, class="button alt small btn-block") Pronto más información
+                    else if (curso.estado_curso=="Activo")
+                        a(href=`cursos/${curso.id}`, class="button fit small btn-block") Más información  
+      
+                    

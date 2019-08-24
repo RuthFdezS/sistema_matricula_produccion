@@ -1,0 +1,29 @@
+.row.wrapper
+    .col-sm-12
+        table#cursosDisponibles.table.table-bordered.table-responsive-sm
+            thead
+                tr
+                th(scope='col') ID
+                th(scope='col') Curso
+                th(scope='col') Especialidad
+                th(scope='col') Tutor
+                th(scope='col') Horario
+                th(scope='col') Cantidad
+                th(scope='col') Aula/Lab
+                th(scope='col') Estado
+            tbody
+                each curso in cursos
+                    tr
+                        th(scope='row') #{curso.id}
+                        td #{curso.nombre_curso}
+                        td #{curso.especialidad_curso}
+                        td #{curso.nombre_tutor}
+                        td #{curso.horario_curso}
+                        td #{curso.cant_estudiantes}
+                        td #{curso.aula_curso}
+                        td #{curso.estado_curso}
+                        td 
+                            button#btnModCurso.btn-sm.btn-block(type='button', onClick=`popUp('modificarCurso/${curso.id}','Modificar Curso')`) Modificar 
+                        td
+                            button.btn-secondary.btn-sm.btn-block.delete-curso(type='button', href="/", data-id=`${curso.id}`) Desactivar
+                            

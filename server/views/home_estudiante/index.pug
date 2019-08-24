@@ -1,0 +1,100 @@
+extends ../layout/index_estudiante
+block slider
+    section#banner
+        .content
+            img#logo-img(src='img/logo-imagen.png', alt='logo imagen')
+            h1 Bienvenidos estudiantes
+            p
+                | "El propósito general de la educación es 
+                br
+                | convertir espejos en ventanas."-Sydney J. Harris.
+            ul.actions
+                li
+                    a.button.scrolly(href='/cursos') Ver cursos disponibles
+
+
+block contenido
+    section#one.wrapper
+        .inner
+            header.major.align-center
+                h2 Noticias de la comunidad
+        .inner.flex.flex-3
+            .flex-item.left
+                div
+                    h3 Magna ultricies
+                    p
+                        | Morbi in sem quis dui plalorem ipsum
+                        br
+                        |  euismod in, pharetra sed ultricies.
+                div
+                    h3 Ipsum adipiscing lorem
+                    p
+                        | Tristique yonve cursus jam nulla quam
+                        br
+                        |  loreipsu gravida adipiscing lorem
+            .flex-item.image.fit.round
+                img(src='img/pic01.jpg', alt='')
+            .flex-item.right
+                div
+                    h3 Tempus nullam
+                    p
+                        | Sed adipiscing ornare risus. Morbi estes
+                        br
+                        |  blandit sit et amet, sagittis magna.
+                div
+                    h3 Suscipit nibh dolore
+                    p
+                        | Pellentesque egestas sem. Suspendisse
+                        br
+                        |  modo ullamcorper feugiat lorem.
+
+    section#two.wrapper.style1.special
+        .container
+            header.major
+                h2 Integrantes
+            section.profiles
+                .row
+                    section.6u.profile(class='6u(medium) 12u$(xsmall)')
+                        img(src='img/profile_placeholder.gif', alt='')
+                        h4 Ruth Fernández Soto
+                        p Estudiante de Informática Educativa
+                    section.6u.profile(class='6u$(medium) 12u$(xsmall)')
+                        img(src='img/profile_placeholder.gif', alt='')
+                        h4 Mariliz Valverde Porras
+                        p Estudiante de Informática Educativa
+
+    section#three.wrapper
+        .inner
+            header.major.align-center
+                h2 Próximos cursos
+            include ../layout/partials/cursos
+    
+    hr.major
+
+    section#three.wrapper.style3.special
+        .container
+            header.major
+                h2 Contáctenos
+        .container(class='50%')
+            form#formComentario(method='post', action='enviarForm', onsubmit='return submitMessage(this);')
+                .row.uniform
+                    div.6u(class='12u$(small)')
+                        input#name(name='name', value='', placeholder='Nombre', type='text', required='')
+                    div(class='6u$ 12u$(small)')
+                        input#email(name='email', value='', placeholder='Correo electrónico', type='email', required='')
+                    div(class='12u$')
+                        textarea#message(name='message', placeholder='Mensaje', rows='6', required='')
+                    div(class='12u$')
+                        ul.actions
+                            li
+                                input(type='submit', name='btnEnviar', value='Enviar mensaje', onclick='clic(this);')
+                            li
+                                input.alt(type='reset', name='btnReset', value='Limpiar', onclick='clic(this);')
+
+
+
+       
+
+
+
+

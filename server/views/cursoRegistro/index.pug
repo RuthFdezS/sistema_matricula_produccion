@@ -1,0 +1,56 @@
+extends ../layout/index
+block contenido
+    main.container.mt-5     
+        h1.text-center.mb-5 #{pagina}
+
+        .row
+            .col-md-12
+                if(errores)
+                    each  error in errores  
+                        div.alert.alert-danger.text-center(role="alert") #{error.mensaje}
+                if(aprrove)
+                    each  appr in aprrove  
+                        div.alert.alert-success.text-center(role="alert") #{appr.mensaje}
+                .row.justify-content-center
+                    .col-md-8
+                        form(action="/cursoRegistro", method="POST")
+                            .form-group
+                                label(for="nombre_curso") Nombre curso
+                                input(id="nombre_curso", class="form-control", type="text", placeholder="Nombre curso", name="nombre_curso", value=nombre_curso)
+                            .form-group
+                                label(for="especialidad_curso") Especialidad
+                                input(id="especialidad_curso", class="form-control", type="text", placeholder="Especialidad del curso", name="especialidad_curso", value=especialidad_curso)
+                            .form-group
+                                label(for="nombre_tutor") Nombre tutor
+                                input(id="nombre_tutor", class="form-control", type="text", placeholder="Nombre tutor", name="nombre_tutor", value=nombre_tutor)
+                            .form-group
+                                label(for="horario_curso") Horario
+                                input(id="horario_curso", class="horario_curso", type="text", placeholder="Horario", name="horario_curso", value=horario_curso)
+                            .form-group
+                                label(for="cant_estudiantes") Cantidad de estudiantes
+                                select#category(name='cant_estudiantes')
+                                    option(value='10') 10
+                                    option(value='15') 15
+                                    option(value='20') 20
+                                    option(value='25') 25
+                            .form-group
+                                label(for="aula_curso") Aula o Laboratio
+                                select#category(name='aula_curso')
+                                    option(value='CECI Aula') CECI Aula
+                                    option(value='CECI LAB') CECI LAB
+                            .form-group
+                                label(for="estado_curso") Estado Curso
+                                select#category(name='estado_curso')
+                                    option(value='') - No seleccionado -
+                                    option(value='Activo') Activo
+                                    option(value='Proximo') Próximo
+                                    option(value='Desactivo') Desactivo
+                            .form-group
+                                label(for="descripcion_curso") Descripción del curso
+                                textarea(class="form-control",name="descripcion_curso", rows="3", placeholder="Descripcion")=descripcion_curso
+
+                            .form-group
+                                label(for="imagen_curso") Nombre de la imagen a mostrar (1,2,..)
+                                input(id="imagen_curso", class="imagen_curso", type="text", placeholder="Imagen ID", name="imagen_curso", value=imagen_curso)
+
+                            input.btn.btn-success.btn-block(type="submit", value="agregar")

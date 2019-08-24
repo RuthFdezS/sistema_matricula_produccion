@@ -1,0 +1,37 @@
+extends ../layout/popup
+block contenido
+    main.container.mt-5 
+        .row
+            .col-md-12
+                if(errores)
+                    each  error in errores  
+                        div.alert.alert-danger.text-center(role="alert") #{error.mensaje}
+                h1.text-center Modificar el estudiante: #{estudiante.nombre_estudiante}
+                .row.justify-content-center
+                    .col-md-8
+                        form(action="/modificarEstudiante/"+estudiante.email_estudiante, method="POST")
+                            .form-group
+                                label(for="pass_estudiante") Contraseña
+                                input(id="pass_estudiante", class="pass_estudiante", type="password", placeholder="Especialidad", name="pass_estudiante", value=estudiante.pass_estudiante required)
+                            .form-group
+                                label(for="nombre_estudiante") Nombre Estudiante
+                                input(id="nombre_estudiante", class="form-control", type="text", placeholder="Nombre estudiante", name="nombre_estudiante", value=estudiante.nombre_estudiante required)
+                            .form-group
+                                label(for="ced_estudiante") Cédula estudiante
+                                input(id="ced_estudiante", class="form-control", type="text", placeholder="Cédula estudiante", name="ced_estudiante", value=estudiante.ced_estudiante required)
+                            .form-group
+                                label(for="tel_estudiante") Teléfono
+                                input(id="tel_estudiante", class="tel_estudiante", type="tel", placeholder= "Teléfono estudiante", name="tel_estudiante", value=estudiante.tel_estudiante required)
+                            .form-group
+                                label(for="escolaridad_estudiante") Escolaridad del estudiante
+                                input(id="escolaridad_estudiante", class="form-control", type="text", placeholder= "Escolaridad del estudiante", name="escolaridad_estudiante", value=estudiante.escolaridad_estudiante required)
+                            .form-group
+                                label(for="nacimiento_estudiante") Fecha de nacimiento
+                                input(id="nacimiento_estudiante", class="nacimiento_estudiante", type="date", name="nacimiento_estudiante", value=estudiante.nacimiento_estudiante required)
+
+                            input.btn.btn-success.btn-block(type="submit", value="Guardar")
+
+            
+
+                
+                    

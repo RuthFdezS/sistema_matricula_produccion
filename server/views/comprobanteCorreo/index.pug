@@ -1,0 +1,21 @@
+extends ../layout/popup
+block contenido
+    main.container.mt-5 
+        .row
+            .col-md-12
+                h1.text-center #{pagina}
+                h3 Nombre del curso: 
+                p #{tempCurso.nombre_curso}
+                h3 Especialidad: 
+                p #{tempCurso.especialidad_curso}
+                h3 Tutor:
+                p #{tempCurso.nombre_tutor} 
+                h3 Horario:
+                p #{tempCurso.horario_curso}
+                h3 Ubicación
+                p Aula/Laboratorio: #{tempCurso.aula_curso}
+
+            
+
+                
+                    

@@ -1,0 +1,27 @@
+extends ../layout/popup
+block contenido
+    main.container.mt-4  
+        h1.text-center.mb-5 #{pagina}        
+        .row.wrapper
+            .col-sm-12
+                table#tableTutores.infoBusqueda.table.table-bordered.table-responsive-sm
+                    thead
+                        tr
+                        th(scope='col') ID
+                        th(scope='col') Nombre
+                        th(scope='col') Cédula
+                        th(scope='col') Email
+                        th(scope='col') Teléfono
+                        th(scope='col') Especialidad
+                    tbody
+                        each tutor in tutores
+                            tr
+                                th(scope='row') #{tutor.id}
+                                td #{tutor.nombre_tutor}
+                                td #{tutor.ced_tutor}
+                                td #{tutor.email_tutor}
+                                td #{tutor.tel_tutor}
+                                td #{tutor.especialidad_tutor}
+            .col-sm-12
+                button.btnImprimir.btn-sm.btn-block(type='button' onClick="imprimirLista('#tableTutores','Lista de tutores')") Imprimir
+

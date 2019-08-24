@@ -1,0 +1,30 @@
+extends ../layout/index
+block contenido
+    main.container.mt-5 
+        .row
+            .col-md-12.text-center
+                h1 #{pagina}
+            .col-md-12
+                .row.wrapper
+                    .col-sm-12
+                        table.infoBusqueda.table.table-bordered.table-responsive-sm
+                            thead
+                                tr
+                                th(scope='col') Cursos
+                                th(scope='col') Estudiantes
+                                th(scope='col') Tutores
+                                th(scope='col') Matriculas
+                            tbody
+                                    tr
+                                        td 
+                                            button.btnExpCursos.btn-sm.btn-block(type='button') Exportar
+                                        td 
+                                            button.btnExpEstudiantes.btn-sm.btn-block(type='button') Exportar
+                                        td 
+                                            button.btnExpTutores.btn-sm.btn-block(type='button') Exportar
+                                        td 
+                                            button.btnExpMatriculas.btn-sm.btn-block(type='button') Exportar
+
+   
+        
+                    

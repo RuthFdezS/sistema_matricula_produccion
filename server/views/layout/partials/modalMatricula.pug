@@ -1,0 +1,22 @@
+div#exampleModalCenter.modal.fade(tabindex='-1', role='dialog', aria-labelledby='exampleModalCenterTitle', aria-hidden='true')
+    div.modal-dialog.modal-dialog-centered(role='document')
+        div.modal-content
+            div.modal-header
+                h5#exampleModalLongTitle.modal-title Matrícula en proceso
+                button.close(type='button', data-dismiss='modal', aria-label='Close')
+                    span(aria-hidden='true') ×
+            div.modal-body
+                .row
+                    section.12u(class='12u$(small)')
+                        ul.alt
+                            li
+                                a.alt.small.align-center(href='/termsandconditions', target="_blank") Ver los terminos y condiciones
+                            li
+                                input#terms(type='checkbox', name='terms')
+                                label(for='terms') He leído y estoy de acuerdo
+                        p
+                            | Debe de marcar la casilla superior para indicar que conoce los terminos y 
+                            | condiciones que se deben de tener en cuenta para matricular este curso.
+            div.modal-footer
+                button.fit.small(type='button', data-dismiss='modal') Cerrar
+                button#btnMatricula.fit.small(type='button', onClick="popUpMatricula('/comprobanteCorreo','Comprobante de matrícula')", disabled) Formalizar matrícula   
